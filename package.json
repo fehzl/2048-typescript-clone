@@ -13,6 +13,7 @@
     "@typescript-eslint/parser": "^5.16.0",
     "babel-eslint": "^10.1.0",
     "esbuild": "^0.14.27",
+    "esbuild-copy-static-files": "^0.1.0",
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^16.0.3",

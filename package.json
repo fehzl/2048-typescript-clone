@@ -1,0 +1,7 @@
+{
+  "name": "2048-clone",
+  "version": "0.1",
+  "main": "index.js",
+  "author": "Felipe Feliciano <fehzl@live.com>",
+  "license": "MIT"
+}

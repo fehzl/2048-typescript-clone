@@ -1,4 +1,5 @@
 const esbuild = require("esbuild");
+const copy = require("esbuild-copy-static-files");
 
 const args = process.argv.slice(2);
 
@@ -9,6 +10,11 @@ const options = args.reduce((res, arg) => {
 
   return { ...res, [key]: isBool(val) ? JSON.parse(val) : val };
 }, {});
+
+esbuild.build({
+  outdir: "dist",
+  plugins: [copy({ src: "./public", dest: "./dist", recursive: true })],
+});
 
 esbuild
   .build({

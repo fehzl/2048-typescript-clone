@@ -1,8 +1,3 @@
-import "./global.css";
+import { html, render } from "lit-html";
 
-const root = document.querySelector("#root");
-
-root.innerHTML = `
-  <h1>Hello World</h1>
-  <p>Lorem ipssum dolor sit amet consectetur adipisicing elit. Quisquam, quidem!</p>
-`;
+render(html`<h1>Hello World</h1>`, document.getElementById("root"));

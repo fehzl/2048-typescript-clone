@@ -1,14 +1,8 @@
-$grid-size: 4;
-$cell-size: 20vmin;
-$cell-gap: 2vmin;
-$bg-lightness: 80%;
-$text-lightness: 20%;
-
 #board {
   display: grid;
-  grid-template-columns: repeat($grid-size, $cell-size);
-  grid-template-rows: repeat($grid-size, $cell-size);
-  gap: $cell-gap;
+  grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+  grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+  gap: var(--cell-gap);
   background-color: #ccc;
   border: 1vmin;
   padding: 2vmin;
@@ -21,20 +15,23 @@ $text-lightness: 20%;
 }
 
 .tile {
-  $x: 1;
-  $y: 2;
+  --x: 2;
+  --y: 3;
+  --background-lightness: 80%;
+  --text-lightness: 20%;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: $cell-size;
-  height: $cell-size;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: red;
   border-radius: 1vmin;
-  top: calc($y * ($cell-size + $cell-gap) + $cell-gap);
-  left: calc($x * ($cell-size + $cell-gap) + $cell-gap);
+  top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   font-weight: bold;
-  background-color: hsl(200, 50%, $bg-lightness);
-  color: hsl(200, 25%, $text-lightness);
+  background-color: hsl(200, 50%, var(--background-lightness));
+  color: hsl(200, 25%, var(--text-lightness));
   animation: show 200ms ease-in-out;
   transition: 100ms ease-in-out;
 }
